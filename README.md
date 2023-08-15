@@ -1,27 +1,37 @@
 # BibliotecaVirtual
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Para rodar esse projeto, faça o clone do respositório do backend. => https://github.com/felipepaixao16/nestjs-backend-biblioteca
 
-## Development server
+## Instale o pacote npm
 
+``bash
+npm install
+
+## Inicie o projeto
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Exemplos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Tela 1
+![Passo 1](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/9ce7ea50-7ec2-4723-b3d6-0d9583374239)
 
-## Build
+Tela 2
+![passo 2](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/f661375d-10c1-435b-84ea-81fc550527b1)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tela 3
+![passo 3](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/913b1e6f-594f-4ade-adac-5cf6b95dc405)
 
-## Running unit tests
+Tela 4
+![passo 4](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/dc9016de-6e6d-4bef-8437-71c64be8a1f1)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Tela 5
+![passo 5](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/5f8b000d-7f66-462d-8fe4-5c615e586b7d)
 
-## Running end-to-end tests
+Tela 6 
+![passo 6](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/af137be0-18ab-4369-a51e-ee8ada3d9b19)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Tela 7 
+![passo 7](https://github.com/felipepaixao16/bibliotecaVirtual/assets/95901427/f120f221-84ad-44c9-ac44-e7543f9d25e3)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
