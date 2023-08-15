@@ -1,0 +1,55 @@
+.navbar {
+    height: 100px;
+}
+
+.navbar-brand {
+    margin-right: 50px;
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 30px;
+    color: #c37352bd;
+}
+
+.icon-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.buttons {
+    margin-left: 25rem;
+}
+
+.buttons button {
+    margin-right: 50px;
+}  
+
+.nav-item {
+    cursor: pointer;
+}
+
+.navbar-text .bi {
+    border-radius: 50%;
+    color: aliceblue;
+}
+
+.nav-link:hover {
+    color: chocolate;
+}
+
+.dropdown-menu {
+    gap: 10px;
+    text-align: center;
+}
+
+.dropdown-menu li:first-child {
+    margin-bottom: 5px;
+}
+
+.dropdown-menu li a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.dropdown-menu li a:hover {
+    color: chocolate;
+}

@@ -1,0 +1,70 @@
+<!-- Modal -->
+<div class="modal fade" id="modalEbook" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalEbookLabel">Cadastro de Livros</h1>
+          <!-- Alert -->
+          <div *ngIf="cadastrado" class="alert alert-success alert-dismissible fade show" role="alert">
+            Livro cadastrado com sucesso!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert()"></button>
+          </div>
+          <!-- Alert Error-->
+          <div *ngIf="erro" class="alert alert-danger d-flex align-items-center  fade show" role="alert">
+            Preencha os campos corretamente!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertError()"></button>
+          </div>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" [formGroup]="formulario">
+            <input class="form-control" type="text" placeholder="Título" aria-label="default input example" [(ngModel)]="titulo"
+            formControlName="titulo">
+            <div class="text-danger" *ngIf="formulario.get('titulo')?.errors?.['required'] && formulario.get('titulo')?.touched">
+              Insira um título para prosseguir.</div>
+
+            <input class="form-control" type="text" placeholder="URL da imagem de capa" aria-label="default input example" 
+            [(ngModel)]="img_url" formControlName="img_url">
+            <div class="text-danger" *ngIf="formulario.get('img_url')?.errors?.['required'] && formulario.get('img_url')?.touched">
+              Insira um link de uma imagem.</div>
+
+            <input class="form-control" type="text" placeholder="Gênero" aria-label="default input example" [(ngModel)]="genero"
+            formControlName="genero">
+            <div class="text-danger" *ngIf="formulario.get('genero')?.errors?.['required'] && formulario.get('genero')?.touched">
+              Insira um gênero para prosseguir.</div>
+
+            <input class="form-control" type="text" placeholder="Idioma" aria-label="default input example" [(ngModel)]="idioma"
+            formControlName="idioma">
+            <div class="text-danger" *ngIf="formulario.get('idioma')?.errors?.['required'] && formulario.get('idioma')?.touched">
+              Insira um idioma para prosseguir.</div>
+
+            <input class="form-control" type="number" placeholder="Ano de publicação" aria-label="default input example"
+            [(ngModel)]="anoDePublicacao" formControlName="anoDePublicacao">
+            <div class="text-danger" *ngIf="formulario.get('anoDePublicacao')?.errors?.['required'] && formulario.get('anoDePublicacao')?.touched">
+              Insira o ano de publicação para prosseguir.</div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Sinopse</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="text" [(ngModel)]="sinopse" 
+              formControlName="sinopse" [maxLength]="188"></textarea>
+              <h4>Caracteres: {{text.length}}</h4>
+              <div class="text-danger" *ngIf="formulario.get('anoDePublicacao')?.errors?.['required'] && formulario.get('anoDePublicacao')?.touched">
+                Insira uma sinopse de no máximo 188 caracteres para prosseguir.</div>
+            </div>
+      
+            <select class="form-select" [(ngModel)]="autor" formControlName="autor" aria-label="Default select example">
+              <option selected>Autor do livro</option>
+              <option *ngFor="let a of autores" [ngValue]="a">{{a.nome}}-{{a.nacionalidade}}</option>
+              <div class="text-danger" *ngIf="formulario.get('autor')?.errors?.['required'] && formulario.get('autor')?.touched">
+                Selecione um autor para prosseguir</div>
+            </select>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" [disabled]="!formulario.valid" (click)="save()">Salvar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>

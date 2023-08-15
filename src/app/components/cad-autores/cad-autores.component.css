@@ -1,0 +1,19 @@
+.form-control {
+    margin-bottom: 30px;
+}
+
+.qtd-livros {
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+.mat-stepper-vertical {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }

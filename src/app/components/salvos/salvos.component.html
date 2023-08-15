@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="salvos">
+    <div class="container text-center">
+        <div class="row">
+          <div class="col row-cols-4" *ngFor="let l of livrosSalvos">
+            <div class="card" style="width: 18rem; height: 35rem;" >
+                <img [src]="l.img_url" class="card-img-top" style="width: 100%;" alt="img de capa">
+                <div class="card-body">
+                  <h5 class="card-title">{{l.titulo}}</h5>
+                  <p class="card-text"><span>Gênero:   </span>{{l.genero}}</p>
+                  <p class="card-text"><span>Idioma:   </span> {{l.idioma}}</p>
+                  <p class="card-text"><span>Ano de publicação:   </span>{{l.anoDePublicacao}}</p>
+                  <p class="card-text" style="border-bottom: 1px solid rgba(0, 0, 0, 0.678);"><span>Autor:   </span>{{l.autores.nome}}</p>
+                  <p class="card-text" style="height: 120px;"><span>Sinopse:   </span>{{l.sinopse}}</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

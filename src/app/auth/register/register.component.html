@@ -1,0 +1,49 @@
+<div class="login-body">
+    <img src="../../../assets/icons/library.jpg" style="width: 100%; height: 100vh;">
+
+    <form class="form-default" [formGroup]="formulario" method="POST">
+        <div class="login-form">     
+            <!-- logo-login -->
+            <div class="logo-login">
+                <a href="index.html"><img src="../../../assets/icons/book-svgrepo-com.svg" alt=""></a>
+            </div>
+            <!-- Alert Sucess-->
+          <div *ngIf="cadastrado" class="alert alert-success alert-dismissible fade show" role="alert">
+            Usuario cadastrado com sucesso!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertSucess()"></button>
+          </div>
+          <!-- Alert Error-->
+          <div *ngIf="erro" class="alert alert-danger d-flex align-items-center  fade show" role="alert">
+            Preencha os campos corretamente!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertError()"></button>
+          </div>
+
+            <h2>Registre-se Aqui</h2>
+            <div class="form-input">
+                <input  type="text" id="nomeCompleto" name="name" placeholder="Nome completo" [(ngModel)]="nomeCompleto" 
+                 formControlName="nomeCompleto">
+                <div class="text-danger" *ngIf="formulario.get('nomeCompleto')?.errors?.['required'] && formulario.get('nomeCompleto')?.touched">
+                    Insira seu nome completo</div>
+            </div>
+
+            <div class="form-input">
+                <input type="email" name="email" placeholder="Endereço de email" [(ngModel)]="email" formControlName="email">
+                <div class="text-danger" *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">
+                    Insira um formato de email válido</div>
+            </div>
+
+            <div class="form-input">
+                <input type="password" name="Senha" placeholder="Senha" [(ngModel)]="password" formControlName="password">
+                <div class="text-danger" *ngIf="formulario.get('password')?.errors?.['required'] && formulario.get('password')?.touched">
+                    A senha deve ter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas e caracteres especiais.</div>
+            </div>
+            
+            <div class="form-input pt-30">
+                <input type="submit" name="submit" value="Registrar-se" [disabled]="!formulario.valid" (click)="save()">
+            </div>
+            <!-- Forget Password -->
+            <a [routerLink]="['/login']" class="registration">login</a>
+        </div>   
+    </form>
+    
+</div>

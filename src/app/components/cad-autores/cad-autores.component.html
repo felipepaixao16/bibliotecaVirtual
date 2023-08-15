@@ -1,0 +1,59 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" 
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" style="position: relative;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Autores</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" [formGroup]="formulario">
+           <!-- Alert Sucess-->
+           <div *ngIf="cadastrado" class="alert alert-success alert-dismissible fade show" role="alert">
+            Autor cadastrado com sucesso!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertSucess()"></button>
+          </div>
+          <!-- Alert Error-->
+          <div *ngIf="erro" class="alert alert-danger d-flex align-items-center  fade show" role="alert">
+            Preencha os campos corretamente!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertError()"></button>
+          </div>
+
+          <input class="form-control" type="text" placeholder="Nome completo" [(ngModel)]="nome" 
+          formControlName="nome" aria-label="default input example">
+          <div class="text-danger" *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">
+            Insira seu nome completo</div>
+
+          <div class="row-md-3">
+            <label for="iData" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="iData" [(ngModel)]="dataDeNascimento" 
+            formControlName="dataDeNascimento">
+            <div class="text-danger" *ngIf="formulario.get('dataDeNascimento')?.errors?.['required'] && formulario.get('dataDeNascimento')?.touched">
+              Insira sua data de nascimento</div>
+          </div>
+
+            <input class="form-control" type="text" placeholder="Nacionalidade" id="nacionalidade" [(ngModel)]="nacionalidade" 
+            formControlName="nacionalidade" aria-label="default input example">
+            <div class="text-danger" *ngIf="formulario.get('nacionalidade')?.errors?.['required'] && formulario.get('nacionalidade')?.touched">
+              Insira sua nacionalidade</div>
+
+            <h4>CPF</h4>
+            <input class="form-control" type="number" placeholder="XXXXXXXXXXX" id="cpf" minlength="11" [(ngModel)]="cpf" formControlName="cpf" 
+            aria-label="default input example">
+            <div class="text-danger" *ngIf="formulario.get('cpf')?.errors?.['required'] && formulario.get('cpf')?.touched">
+              Insira um CPF válido, minimo de 11 digitos</div>
+
+            <input class="form-control qtd-livros" type="number" placeholder="Qtd de livros escritos" [(ngModel)]="quantidadeLivro" 
+            formControlName="quantidadeLivro" aria-label="default input example">
+            <div class="text-danger" *ngIf="formulario.get('quantidadeLivro')?.errors?.['required'] && formulario.get('quantidadeLivro')?.touched">
+              Insira apenas números neste campo</div>
+        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" [disabled]="!formulario.valid" (click)="save()">Salvar alterações</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

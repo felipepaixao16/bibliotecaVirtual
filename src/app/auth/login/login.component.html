@@ -1,0 +1,31 @@
+<div class="login-body">
+    <img src="../../../assets/icons/library.jpg" style="width: 100%; height: 100vh;">
+    <!-- Login Admin -->
+    <form class="form-default" action="" method="POST" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+        
+        <div class="login-form">
+            <!-- Alert Error-->
+          <div *ngIf="erro" class="alert alert-danger d-flex alert-dismissible fade show" role="alert">
+            Email e senha incorretos, ou usuário não está cadastrado!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlertError()"></button>
+        </div>
+            <!-- logo-login -->
+            <div class="logo-login">
+                <a href="index.html"><img src="../../../assets/icons/book-svgrepo-com.svg" alt=""></a>
+            </div>
+            <h2>Login</h2>
+            <div class="form-input">
+                <input matInput type="email" name="email" placeholder="Email" formControlName="email">
+            </div>
+            <div class="form-input">
+                <input matInput type="password" name="Senha" placeholder="Senha" formControlName="password">
+            </div>
+            <div class="form-input pt-30">
+                <input mat-raised-button type="submit" name="submit" value="login" >
+            </div>
+            <!-- Forget Password -->
+            <a [routerLink]="['/register']" class="registration">Registrar-se</a>
+        </div>
+    </form>
+    <!-- /end login form -->
+</div>
